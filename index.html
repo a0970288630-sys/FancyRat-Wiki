@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>花枝鼠新手飼養指南：從認識到日常照護</title>
+  <style>
+    :root {
+      --primary: #4a6fa5;
+      --accent: #ff7e5f;
+      --bg: #f4f7f6;
+      --card-bg: #ffffff;
+      --text: #2c3e50;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    .progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 6px;
+      background-color: var(--accent);
+      width: 12.5%;
+      transition: width 0.3s ease;
+      z-index: 100;
+    }
+    .slide-container {
+      width: 90%;
+      max-width: 800px;
+      height: 480px;
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .slide { display: none; height: 100%; flex-direction: column; }
+    .slide.active { display: flex; }
+    h1 { color: var(--primary); font-size: 1.8rem; margin-bottom: 12px; }
+    h2 { color: var(--primary); font-size: 1.5rem; margin-bottom: 16px; border-bottom: 2px solid #eef2f5; padding-bottom: 8px; }
+    p { font-size: 1.05rem; line-height: 1.6; color: #555; margin-bottom: 12px; }
+    ul { margin-left: 20px; font-size: 1rem; line-height: 1.8; color: #444; }
+    li { margin-bottom: 8px; }
+    .badge {
+      display: inline-block;
+      background: #eef4fb;
+      color: var(--primary);
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      margin-top: auto;
+    }
+    .nav-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      width: 90%;
+      max-width: 800px;
+    }
+    button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover { background-color: #3b5984; }
+    button:disabled { background-color: #ccc; cursor: not-allowed; }
+    .page-indicator { font-weight: bold; color: #777; }
+  </style>
+</head>
+<body>
+
+  <div class="progress-bar" id="progress"></div>
+
+  <div class="slide-container">
+    <!-- Slide 1 -->
+    <div class="slide active">
+      <h1>🐭 花枝鼠新手飼養指南</h1>
+      <p style="font-size: 1.2rem; color: #666; margin-top: 20px;">從認識習性到日常健康照護，一份專為初學者打造的圖文教學簡報。</p>
+      <div style="background: #f0f4f8; padding: 20px; border-radius: 8px; margin-top: 20px;">
+        <p><strong>💡 本簡報知識來源：</strong> FancyRat LLM Wiki 知識庫</p>
+        <p>操作說明：點擊下方按鈕或使用鍵盤 [← / →] 方向鍵進行切換。</p>
+      </div>
+      <span class="badge">對應 Wiki: wiki/index.md</span>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+      <h2>1. 認識花枝鼠（Fancy Rat）</h2>
+      <ul>
+        <li><strong>智慧與社交：</strong> 花枝鼠智商高、能辨識主人，具備極強的群居社交需求。</li>
+        <li><strong>平均壽命：</strong> 約 2 至 3 年，需要穩定的陪伴與照護承諾。</li>
+        <li><strong>夜行性習性：</strong> 主要活動時間為傍晚至夜間，白天需要安靜休息。</li>
+      </ul>
+      <span class="badge">對應 Wiki: wiki/basics.md</span>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+      <h2>2. 飼養環境建置</h2>
+      <ul>
+        <li><strong>籠具選擇：</strong> 需具備良好的垂直活動空間與通風性（推薦金屬雙層籠）。</li>
+        <li><strong>墊材選用：</strong> 嚴禁使用含粉塵多的木屑，推薦使用低粉塵紙墊材或廚房紙巾。</li>
+        <li><strong>溫濕度控制：</strong> 最適溫度為 20-25°C，避免陽光直射與冷氣直吹。</li>
+      </ul>
+      <span class="badge">對應 Wiki: wiki/housing.md</span>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide">
+      <h2>3. 飲食與營養管理</h2>
+      <ul>
+        <li><strong>主食選擇：</strong> 以實驗室磨牙飼料（如 5001）或專用綜合糧為主。</li>
+        <li><strong>蔬果補充：</strong> 可適量給予煮熟地瓜、南瓜、新鮮花椰菜。</li>
+        <li><strong>飲食禁忌：</strong> 嚴禁生豆類、巧克力、柑橘類皮（雄鼠不宜）、高鹽高糖食物。</li>
+      </ul>
+      <span class="badge">對應 Wiki: wiki/nutrition.md</span>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slide">
+      <h2>24. 健康監測與常見疾病</h2>
+      <ul>
+        <li><strong>呼吸道敏感：</strong> 若出現發出咕咕聲、打噴嚏或眼鼻有紅色分泌物（黴形體），需及時就醫。</li>
+        <li><strong>腫瘤預防：</strong> 母鼠較易發生乳腺腫瘤，平時摸摸身體進行自主檢查。</li>
+        <li><strong>緊急照護：</strong> 建議家中備有基礎霧化設備與專業異寵獸醫聯絡方式。</li>
+      </ul>
+      <span class="badge">對應 Wiki: wiki/health.md</span>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="slide">
+      <h2>5. 日常照護與環境豐富化</h2>
+      <ul>
+        <li><strong>放風互動：</strong> 每天提供至少 30 分鐘的安全室內放風時間。</li>
+        <li><strong>清潔頻率：</strong> 墊材每週定期更換，食盆與水瓶每日清洗。</li>
+        <li><strong>玩具布置：</strong> 提供管道、布吊床與啃咬玩具，滿足探索與磨牙需求。</li>
+      </ul>
+      <span class="badge">對應 Wiki: wiki/care.md</span>
+    </div>
+
+    <!-- Slide 7 -->
+    <div class="slide">
+      <h2>6. 新手常見 FAQ</h2>
+      <ul>
+        <li><strong>Q: 可以只養一隻花枝鼠嗎？</strong><br>A: 強烈建議成對或多隻飼養，單隻容易產生焦慮與憂鬱。</li>
+        <li><strong>Q: 花枝鼠需要洗澡嗎？</strong><br>A: 他們非常愛乾淨會自行梳理，除非極度髒污否則不需要水洗。</li>
+      </ul>
+      <span class="badge">對應 Wiki: wiki/faq.md</span>
+    </div>
+
+    <!-- Slide 8 -->
+    <div class="slide">
+      <h2>7. 總結與學習資源</h2>
+      <p>恭喜你完成了花枝鼠新手照護基礎課程！給牠們一個安全、充滿愛的環境是健康長壽的關鍵。</p>
+      <div style="margin-top: 20px; background: #eef4fb; padding: 15px; border-radius: 8px;">
+        <p><strong>🔗 深入學習：</strong> 歡迎造訪 FancyRat LLM Wiki 查閱完整醫療與飲食資料庫。</p>
+      </div>
+      <span class="badge">對應 Wiki: wiki/summary.md</span>
+    </div>
+  </div>
+
+  <div class="nav-controls">
+    <button id="prevBtn" onclick="changeSlide(-1)" disabled>上一頁</button>
+    <span class="page-indicator" id="pageNum">1 / 8</span>
+    <button id="nextBtn" onclick="changeSlide(1)">下一頁</button>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function updateSlide() {
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === currentSlide);
+      });
+      document.getElementById('pageNum').innerText = `${currentSlide + 1} / ${totalSlides}`;
+      document.getElementById('progress').style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+      
+      document.getElementById('prevBtn').disabled = (currentSlide === 0);
+      document.getElementById('nextBtn').disabled = (currentSlide === totalSlides - 1);
+    }
+
+    function changeSlide(direction) {
+      currentSlide += direction;
+      if (currentSlide < 0) currentSlide = 0;
+      if (currentSlide >= totalSlides) currentSlide = totalSlides - 1;
+      updateSlide();
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') changeSlide(1);
+      if (e.key === 'ArrowLeft') changeSlide(-1);
+    });
+  </script>
+</body>
+</html>
